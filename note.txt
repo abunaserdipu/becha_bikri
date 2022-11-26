@@ -1,0 +1,6 @@
+
+
+
+
+Business logic:
+=> Most selling products show in seller dashboard, so seller can know which product is hot cake in the market.
