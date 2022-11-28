@@ -170,7 +170,16 @@ const Home = () => (
     {/* Products start */}
     <section>
       <h2>Featured Products</h2>
-      <div className="card"></div>
+      <div class="card" style={{ width: "400px" }}>
+        <img class="card-img-top" src="" alt="Card" />
+        <div class="card-body">
+          <h4 class="card-title">John Doe</h4>
+          <p class="card-text">Some example text.</p>
+          <a href="abc" class="btn btn-primary">
+            See Profile
+          </a>
+        </div>
+      </div>
     </section>
     {/* Products end */}
 
