@@ -7,17 +7,15 @@ const AddProducts = () => {
     name: "",
     price: "",
     details: "",
-    image: "",
   });
-  console.log(productInfo);
+  // console.log(productInfo);
   // const [image, setImage] = useState({ image: "" });
   const onChangeValue = (event) => {
     setProductInfo({
       ...productInfo,
       [event.target.name]: event.target.value,
-      [event.target.name]: event.target.files,
     });
-    // setImage({ [event.target.name]: event.target.files[0] });
+    // setImage({ [event.target.name]: event.target.files });
   };
   const Insert = async (event) => {
     try {
@@ -29,7 +27,7 @@ const AddProducts = () => {
             productName: productInfo.name,
             productPrice: productInfo.price,
             productDetails: productInfo.details,
-            productImage: productInfo.image[0].name,
+            // productImage: image.image[0].name,
           }
         )
         .then((res) => console.log(res.data));
@@ -78,12 +76,7 @@ const AddProducts = () => {
                 </div>
                 <div className="form-group my-3">
                   <label className="text-info">Product Image:</label>
-                  <input
-                    type="file"
-                    name="image"
-                    onChange={onChangeValue}
-                    className="form-control"
-                  />
+                  <input type="file" name="image" className="form-control" />
                 </div>
                 <input
                   type="submit"

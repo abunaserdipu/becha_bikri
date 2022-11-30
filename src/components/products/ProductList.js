@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -16,6 +17,7 @@ const ProductList = () => {
       })
       .then((error) => console.log(error));
   };
+
   return (
     <>
       <h2>Featured Products</h2>
@@ -30,9 +32,13 @@ const ProductList = () => {
                   <strong>{item.price}</strong>
                 </p>
                 <p class="card-text">{item.details}</p>
-                <a href="abc" class="btn btn-primary">
-                  See Profile
-                </a>
+                <Link
+                  to="/product/details"
+                  id={item.id}
+                  class="btn btn-primary"
+                >
+                  See Details
+                </Link>
               </div>
             </div>
           </div>
