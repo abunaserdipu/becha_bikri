@@ -1,48 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import "./home.css";
 import {
   faCar,
   faDollar,
   faHeadset,
   faMoneyBillTransfer,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import carousel1 from "../assets/images/carousel1.jpg";
 import carousel2 from "../assets/images/carousel2.jpg";
 import carousel3 from "../assets/images/carousel3.jpg";
+import ProductList from "./products/ProductList";
 const Home = () => (
   <>
     {/* Navbar start */}
-    <nav className="navbar navbar-expand-sm bg-light navbar-light">
-      <div className="container-fluid justify-content-center">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link className="nav-link active" to="/">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link className="nav-link" to="/">
-              Shop
-            </Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link className="nav-link" to="/">
-              Blog
-            </Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link className="nav-link" to="/">
-              Pages
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+
     {/* Navbar end */}
 
     {/* Carousel start */}
@@ -169,17 +141,7 @@ const Home = () => (
 
     {/* Products start */}
     <section>
-      <h2>Featured Products</h2>
-      <div class="card" style={{ width: "400px" }}>
-        <img class="card-img-top" src="" alt="Card" />
-        <div class="card-body">
-          <h4 class="card-title">John Doe</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="abc" class="btn btn-primary">
-            See Profile
-          </a>
-        </div>
-      </div>
+      <ProductList />
     </section>
     {/* Products end */}
 

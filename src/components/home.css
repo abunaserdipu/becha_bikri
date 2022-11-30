@@ -1,0 +1,5 @@
+.carousel-item img {
+  background: rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  background-position: center;
+}

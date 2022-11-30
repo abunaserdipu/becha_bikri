@@ -4,12 +4,15 @@ include('../db_connection.php');
 $productList = mysqli_query($db_conn, "SELECT * FROM products");
 if (mysqli_num_rows($productList) > 0) {
     while ($row = mysqli_fetch_assoc($productList)) {
-        // $viewjson['name'] = $row['name'];
-        // $viewjson['price'] = $row['price'];
-        // $viewjson['details'] = $row['details'];
+        $view_json['name'] = $row['name'];
+        $view_json['price'] = $row['price'];
+        $view_json['details'] = $row['details'];
 
-        // $jsonarray['productData'][] = $viewjson;
-        print_r($row);
+        $json_array['productData'][] = $view_json;
     }
-    // echo json_encode($jsonarray);
+    echo json_encode($json_array);
+    return;
+} else {
+    echo json_encode(['success' => false, 'msg' => 'No data available']);
+    return;
 }
