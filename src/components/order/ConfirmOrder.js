@@ -29,8 +29,10 @@ const ConfirmOrder = () => {
           }
         )
         .then((res) => {
-          if (res.data.success !== false) {
-          }
+          console.log(res.data);
+          //   if (res.data.success !== false) {
+          //     navigate("/order/invoice");
+          //   }
         });
     } catch (error) {
       throw error;
@@ -74,7 +76,11 @@ const ConfirmOrder = () => {
                 <option value="2">bKash</option>
               </select>
             </div>
-            <input type="submit" className="btn btn-info" value="Add Product" />
+            <input
+              type="submit"
+              className="btn btn-info"
+              value="Confirm Order"
+            />
           </form>
         </div>
       </div>

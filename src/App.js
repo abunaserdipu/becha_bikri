@@ -7,6 +7,7 @@ import ProductDetails from "./components/products/ProductDetails";
 import Register from "./components/authentication/Register";
 import Login from "./components/authentication/Login";
 import ConfirmOrder from "./components/order/ConfirmOrder";
+import Invoice from "./components/bill/Invoice";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/checkout/register" element={<Register />} />
           <Route path="/checkout/login" element={<Login />} />
           <Route path="/checkout/order" element={<ConfirmOrder />} />
+          <Route path="/order/invoice" element={<Invoice />} />
           <Route exact path="/addproduct" element={<AddProducts />} />
         </Route>
       </Routes>
