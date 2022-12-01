@@ -22,20 +22,20 @@ const ProductList = () => {
     <>
       <h2>Featured Products</h2>
       <div className="row">
-        {products.map((item, index) => (
-          <div className="col-md-2" key={item.id}>
-            <div class="card">
-              <img class="card-img-top" src="" alt="Card" />
-              <div class="card-body">
-                <h4 class="card-title">{item.name}</h4>
+        {products.map((item) => (
+          <div className="col-md-2">
+            <div className="card">
+              <img className="card-img-top" src="" alt="Card" />
+              <div className="card-body" key={item.id}>
+                <h4 className="card-title">{item.name}</h4>
                 <p>
                   <strong>{item.price}</strong>
                 </p>
-                <p class="card-text">{item.details}</p>
+                <p className="card-text">{item.details}</p>
                 <Link
                   to="/product/details"
-                  id={item.id}
-                  class="btn btn-primary"
+                  state={{ data: item }} //this system used for pass data by link in another component
+                  className="btn btn-primary"
                 >
                   See Details
                 </Link>
