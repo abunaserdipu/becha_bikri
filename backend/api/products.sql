@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 06:52 PM
+-- Generation Time: Dec 01, 2022 at 01:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -41,9 +41,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `details`, `price`, `image`, `date`) VALUES
-(1, 'Rice', 'Fresh Rice no harmful chemical used.', 2500, '', '2022-11-30'),
-(2, 'Sugar', 'Fresh Sugar no harmful chemical used.', 500, '', '2022-11-30'),
-(3, 'Oil', 'Imported Oil', 498, '', '2022-11-30');
+(1, 'Rice', 'Fresh rice has no extra harmful chemicals.', 2500, '', '2022-11-30'),
+(2, 'Flour', 'Fresh flour has no extra harmful chemicals.', 1000, '', '2022-11-30'),
+(3, 'Sugar', 'Fresh Sugar no harmful chemical included', 100, '', '2022-11-30'),
+(4, 'test', 'test', 99, '', '2022-11-30'),
+(5, 'test', 'test', 9, '', '2022-11-30'),
+(6, 'test', 'test', 99, '', '2022-11-30');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +66,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
