@@ -6,8 +6,9 @@ if (isset($post_data) && !empty($post_data)) {
     $name = $data->name;
     $price = $data->price;
     $payment = $data->payment;
+    $quantity = $data->quantity;
 
-    $order = mysqli_query($db_conn, "INSERT INTO orders (product_name,product_price,payment) VALUES ('$name','$price','$payment')");
+    $order = mysqli_query($db_conn, "INSERT INTO orders (product_name,product_price,payment,quantity) VALUES ('$name','$price','$payment','$quantity')");
     if ($order) {
         $last_id = mysqli_insert_id($db_conn);
         echo json_encode(['success' => true, 'insertId' => $last_id]);

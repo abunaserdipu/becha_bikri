@@ -5,7 +5,7 @@ const AddProducts = () => {
   //Inside useState property name and form input field name should match
   const [productInfo, setProductInfo] = useState({
     name: "",
-    price: "",
+    price: 0,
     details: "",
   });
   // console.log(productInfo);

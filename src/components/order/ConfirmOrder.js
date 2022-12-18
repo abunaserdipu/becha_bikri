@@ -1,19 +1,33 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 const ConfirmOrder = () => {
   const location = useLocation();
   const product = location.state;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [order, setOrder] = useState({
     name: product.name,
-    price: product.price,
     payment: "",
   });
 
+  const [count, setCount] = useState(0);
+  const [orderPrice, setOrderPrice] = useState(product.price);
+  console.log(orderPrice);
+  console.log(count);
   const onChangeValue = (event) => {
     setOrder({ ...order, [event.target.name]: event.target.value });
+  };
+
+  const incrementValue = () => {
+    setCount(count + 1);
+    setOrderPrice(orderPrice + product.price);
+  };
+
+  const decrementValue = () => {
+    setCount(count - 1);
   };
 
   const onSubmitValue = async (event) => {
@@ -26,6 +40,7 @@ const ConfirmOrder = () => {
             name: order.name,
             price: order.price,
             payment: order.payment,
+            quantity: count,
           }
         )
         .then((res) => {
@@ -62,12 +77,38 @@ const ConfirmOrder = () => {
               <input
                 type="number"
                 name="price"
-                value={product.price}
+                value={orderPrice}
                 // onChange={onChangeValue}
                 className="form-control"
                 placeholder="Product Price"
               />
             </div>
+            <div className="form-group my-3">
+              <label className="text-info">Product Quantity:</label>
+              <input
+                type="number"
+                name="quantity"
+                value={count}
+                placeholder="Product quantity"
+              />
+              <span>
+                <button
+                  type="button"
+                  className="btn  btn-outline-info"
+                  onClick={incrementValue}
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-info"
+                  onClick={decrementValue}
+                >
+                  <FontAwesomeIcon icon={faMinus} />
+                </button>
+              </span>
+            </div>
+
             <div className="form-group my-3">
               <label className="text-info">Payment Method:</label>
               <select name="payment" onChange={onChangeValue}>
