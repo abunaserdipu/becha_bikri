@@ -21,7 +21,7 @@ const Register = () => {
       axios
         .post(
           // `http://localhost/projects/becha_bikri/backend/api/authentication/register.php`,
-          `backend/api/authentication/register.php`,
+          "backend/api/authentication/register.php",
           {
             email: registerData.email,
             password: registerData.password,

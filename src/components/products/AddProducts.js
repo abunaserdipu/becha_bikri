@@ -23,7 +23,7 @@ const AddProducts = () => {
       axios
         .post(
           // `http://localhost/projects/becha_bikri/backend/api/products/addproducts.php`,
-          `backend/api/products/addproducts.php`,
+          "backend/api/products/addproducts.php",
           {
             productName: productInfo.name,
             productPrice: productInfo.price,
