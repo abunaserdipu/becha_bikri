@@ -20,7 +20,8 @@ const Register = () => {
     if (registerData.password === registerData.confirm_password) {
       axios
         .post(
-          `http://localhost/projects/becha_bikri/backend/api/authentication/register.php`,
+          // `http://localhost/projects/becha_bikri/backend/api/authentication/register.php`,
+          `backend/api/authentication/register.php`,
           {
             email: registerData.email,
             password: registerData.password,

@@ -1,6 +1,7 @@
 {
   "name": "becha_bikri",
   "version": "0.1.0",
+  "homepage": "https://dipu.bdprogrammers.com/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

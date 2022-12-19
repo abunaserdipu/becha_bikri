@@ -1,0 +1,3 @@
+db_name:u318076185_becha_bikri
+db_user: u318076185_becha_bikri
+db_pass: $uOQ^XH1

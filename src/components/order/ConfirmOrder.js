@@ -13,17 +13,19 @@ const ConfirmOrder = () => {
     payment: "",
   });
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [orderPrice, setOrderPrice] = useState(product.price);
   console.log(orderPrice);
   console.log(count);
   const onChangeValue = (event) => {
     setOrder({ ...order, [event.target.name]: event.target.value });
   };
-
+  //increment quantity and price
   const incrementValue = () => {
     setCount(count + 1);
-    setOrderPrice(orderPrice + product.price);
+    if (count > 1) {
+      setOrderPrice(orderPrice * count);
+    }
   };
 
   const decrementValue = () => {
@@ -35,7 +37,8 @@ const ConfirmOrder = () => {
       event.preventDefault();
       axios
         .post(
-          `http://localhost/projects/becha_bikri/backend/api/order/confirmorder.php`,
+          // `http://localhost/projects/becha_bikri/backend/api/order/confirmorder.php`,
+          `backend/api/order/confirmorder.php`,
           {
             name: order.name,
             price: order.price,
