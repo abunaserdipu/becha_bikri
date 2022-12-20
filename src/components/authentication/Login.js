@@ -18,8 +18,8 @@ const Login = () => {
     try {
       axios
         .post(
-          // `http://localhost/projects/becha_bikri/backend/api/authentication/login.php`,
-          `backend/api/authentication/login.php`,
+          // "http://localhost/projects/becha_bikri/backend/api/authentication/login.php",
+          "backend/api/authentication/login.php",
           { email: loginData.email, password: loginData.password }
         )
         .then((res) => {

@@ -13,37 +13,37 @@ const ConfirmOrder = () => {
     payment: "",
   });
 
-  const [count, setCount] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(1);
   const [orderPrice, setOrderPrice] = useState(product.price);
-  console.log(orderPrice);
-  console.log(count);
   const onChangeValue = (event) => {
     setOrder({ ...order, [event.target.name]: event.target.value });
   };
   //increment quantity and price
   const incrementValue = () => {
-    setCount(count + 1);
-    if (count > 1) {
-      setOrderPrice(orderPrice * count);
-    }
+    setProductQuantity(productQuantity + 1);
+    let priceIncrement = orderPrice * productQuantity;
+    setOrderPrice(priceIncrement);
   };
 
   const decrementValue = () => {
-    setCount(count - 1);
-  };
+    setProductQuantity(productQuantity - 1);
 
+    let priceDecrement = orderPrice - product.price;
+    setOrderPrice(priceDecrement);
+  };
+  //api connection
   const onSubmitValue = async (event) => {
     try {
       event.preventDefault();
       axios
         .post(
-          // `http://localhost/projects/becha_bikri/backend/api/order/confirmorder.php`,
-          `backend/api/order/confirmorder.php`,
+          // "http://localhost/projects/becha_bikri/backend/api/order/confirmorder.php",
+          "backend/api/order/confirmorder.php",
           {
             name: order.name,
-            price: order.price,
+            price: orderPrice,
             payment: order.payment,
-            quantity: count,
+            quantity: productQuantity,
           }
         )
         .then((res) => {
@@ -91,7 +91,7 @@ const ConfirmOrder = () => {
               <input
                 type="number"
                 name="quantity"
-                value={count}
+                value={productQuantity}
                 placeholder="Product quantity"
               />
               <span>

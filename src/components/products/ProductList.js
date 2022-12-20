@@ -9,8 +9,8 @@ const ProductList = () => {
   const showProducts = async () => {
     axios
       .get(
-        // `http://localhost/projects/becha_bikri/backend/api/products/productlist.php`
-        `backend/api/products/productlist.php`
+        // "http://localhost/projects/becha_bikri/backend/api/products/productlist.php"
+        "backend/api/products/productlist.php"
       )
       .then((res) => {
         // console.log(res.data.productData);
